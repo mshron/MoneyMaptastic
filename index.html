@@ -5,6 +5,7 @@
 <script src="kartograph/lib/jquery.min.js"></script>
 <script src="kartograph/lib/dat.gui.min.js"></script>
 <script src="kartograph/lib/raphael-min.js"></script>
+<script src="kartograph/lib/underscore-min.js"></script>
 <script src="kartograph/kartograph.js"></script>
 
 <script>
@@ -14,21 +15,44 @@
 		
 		
     //window.mymap = new svgmap.SVGMap('#container');
-    map = kartograph.map('#container');
+/*    map = kartograph.map('#container');
     map.loadMap('map.svg', function(map) {
       map.addLayer('county-34003');
       // map.addLayer('county-34003','fg');
-    });
 
-      map.choropleth({
+  map.choropleth({
     	//layer: 'county-34003',
       data: function(d) { alert(d); return 1; },
       colors: function(d) {
 		    return '#f94'; // return color based on data value/object
       },
-	
+    }); */
+
+    $.ajax({
+			url: 'census_data/gini.json',
+			dataType: 'json',
+			success: function(data) {
+				gini_data = data;
+
+				map = $K.map('#container', 400, 400);
+				map.loadMap('map.svg', function() {
+					map.loadStyles('styles.css', function() {
+						map.addLayer({
+							id: 'county-34003',
+							key: 'id'
+            });
+            //alert('update');
+            updateMap();
+					})
+				});
+			}
     });
-  });
+
+    function updateMap() {
+      alert('updating');
+    }
+			
+ });
 </script>
 <style>
 	body,html { background: #fff; height:100%; }
