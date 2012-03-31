@@ -1,9 +1,10 @@
 proj:
     id: mercator
-    lon0: auto
-    lat0: auto
+    lon0: 40.5
 bounds:
     mode: polygons
+    data:
+        layer: county-34003
 layers:
 -   id: county-34003
     src: map_data/tl_2010_34003_tract10.shp
@@ -35,6 +36,4 @@ layers:
 -   id: county-36119
     src: map_data/tl_2010_36119_tract10.shp
     attributes: ["GEOID10"]
-export:
-    width: 200
 
