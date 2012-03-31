@@ -1,0 +1,38 @@
+#proj:
+#bounds:
+#    mode: "bbox"
+#    data: 
+layers:
+-   id: county-34003
+    src: map_data/tl_2010_34003_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-34017
+    src: map_data/tl_2010_34017_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-34031
+    src: map_data/tl_2010_34031_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36005
+    src: map_data/tl_2010_36005_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36047
+    src: map_data/tl_2010_36047_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36061
+    src: map_data/tl_2010_36061_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36081
+    src: map_data/tl_2010_36081_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36085
+    src: map_data/tl_2010_36085_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36087
+    src: map_data/tl_2010_36087_tract10.shp
+    attributes: ["GEOID10"]
+-   id: county-36119
+    src: map_data/tl_2010_36119_tract10.shp
+    attributes: ["GEOID10"]
+export:
+    width: 200
+
