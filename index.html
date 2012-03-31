@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>money maptastic!</title>
+<script src="kartograph/lib/jquery.min.js"></script>
+<script src="kartograph/lib/dat.gui.min.js"></script>
+<script src="kartograph/lib/raphael-min.js"></script>
+<script src="kartograph/kartograph.js"></script>
+
+<script>
+
+
+	$(function() {
+		
+		
+    //window.mymap = new svgmap.SVGMap('#container');
+    map = kartograph.map('#container');
+    map.loadMap('map.svg', function(map) {
+      map.addLayer('county-34003');
+      // map.addLayer('county-34003','fg');
+    });
+
+      map.choropleth({
+    	//layer: 'county-34003',
+      data: function(d) { alert(d); return 1; },
+      colors: function(d) {
+		    return '#f94'; // return color based on data value/object
+      },
+	
+    });
+  });
+</script>
+<style>
+	body,html { background: #fff; height:100%; }
+	
+	#container {
+		background: #fff;
+		width: 100%;
+		height: 95%;
+	}
+	svg path { stroke-linejoin: round }
+
+	svg .polygon.bg {
+		stroke: #ddd;
+		stroke-width:10px;
+	}
+	svg .polygon.fg {
+		stroke: #000;
+		stroke-width:1px;
+		fill: #fff
+	}
+	svg .dotMarker {
+		stroke: #833;
+		fill: #833;
+		fill-opacity: .4;
+	}
+	svg .dotMarker:hover {
+		stroke: #000;
+		fill: #f33;
+		fill-opacity: .7;
+	}	
+</style>
+</head>
+<body>
+	<div id="container">
+	
+	</div>
+</body>
+</html>
