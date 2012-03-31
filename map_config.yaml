@@ -1,7 +1,9 @@
-#proj:
-#bounds:
-#    mode: "bbox"
-#    data: 
+proj:
+    id: mercator
+    lon0: auto
+    lat0: auto
+bounds:
+    mode: polygons
 layers:
 -   id: county-34003
     src: map_data/tl_2010_34003_tract10.shp
